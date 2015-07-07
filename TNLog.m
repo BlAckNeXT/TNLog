@@ -257,7 +257,7 @@ static NSString *userId      = nil;
     manager.requestSerializer              = [AFHTTPRequestSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"application/x-www-form-urlencoded",@"text/plain",@"application/json",nil];
     NSURL *filePath = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@%@",kLogDirectory,zipName]];
-    [manager POST:@"http://logupload.systoon.com/fileUploadServlet" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+    [manager POST:@"your url" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         [formData appendPartWithFileURL:filePath name:@"zip" error:nil];
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Success: %@", responseObject);
